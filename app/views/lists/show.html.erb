@@ -1,0 +1,17 @@
+<div class="container">
+
+<%= @list.name %>
+<br>
+<%= link_to "Add new Movie to list", new_list_bookmark_path(params[:id]), class: "btn btn-primary" %>
+
+<br>
+
+<ul class="list-group">
+  <% @list.movies.each do |movie|%>
+    <li class="list-group-item"><%= movie.title %> <%= link_to "Delete", bookmark_path(movie.bookmarks.find_by(list: @list)), method: :delete %></li>
+  <% end %>
+</ul>
+
+
+
+</div>
