@@ -1,6 +1,9 @@
 <div class="container">
 
-<%= @list.name %>
+<%= @list.name %> 
+<% if @list.photo.attached? %>
+  <%= cl_image_tag @list.photo.key, height: 400, width: 300, crop: :fill  %>
+<% end %>
 <br>
 <%= link_to "Add new Movie to list", new_list_bookmark_path(params[:id]), class: "btn btn-primary" %>
 
@@ -16,7 +19,6 @@
   <% end %>
 </ul>
 <%= link_to "All Lists",  lists_path %>
-
 
 
 </div>
