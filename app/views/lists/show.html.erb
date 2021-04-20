@@ -8,9 +8,10 @@
 
 <ul class="list-group">
   <% @list.movies.each do |movie|%>
-    <li class="list-group-item"><%= movie.title %> <%= link_to "Delete", bookmark_path(movie.bookmarks.find_by(list: @list)), method: :delete %></li>
+    <li class="list-group-item"><%= movie.title %> <%= link_to "Delete", bookmark_path(movie.bookmarks.find_by(list: @list)), method: :delete, data: { confirm: "Are you sure?" } %></li>
   <% end %>
 </ul>
+<%= link_to "All Lists",  lists_path %>
 
 
 
