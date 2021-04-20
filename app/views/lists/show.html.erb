@@ -8,7 +8,11 @@
 
 <ul class="list-group">
   <% @list.movies.each do |movie|%>
-    <li class="list-group-item"><%= movie.title %> <%= link_to "Delete", bookmark_path(movie.bookmarks.find_by(list: @list)), method: :delete, data: { confirm: "Are you sure?" } %></li>
+    <li class="list-group-item"><%= movie.title %> 
+      <%= link_to "Delete", bookmark_path(movie.bookmarks.find_by(list: @list)), method: :delete, data: { confirm: "Are you sure?" } %>
+      <p>Comment: <%= movie.bookmarks.find_by(list: @list).comment %></p>
+      <%= image_tag movie.poster_url, size: "200x250", alt: "movie poster" %>
+    </li>
   <% end %>
 </ul>
 <%= link_to "All Lists",  lists_path %>
