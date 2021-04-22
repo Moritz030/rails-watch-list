@@ -1,5 +1,5 @@
 <% 
-  foto_path = asset_path("banner")
+  foto_path = asset_path("banner.jpg")
   if @list.photo.attached? 
     foto_path = cl_image_path(@list.photo.key)
   end
