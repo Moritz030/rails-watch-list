@@ -1,11 +1,11 @@
 <div id="carouselExampleControls" class="carousel slide mt-1" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active text-center" style="background-color:grey">
-        <p style="color:white">Reviews of List:</p>
+        <p style="color:white" class="pt-3">Reviews of List:</p>
     </div>
     <% @list.reviews.each do |review| %>
     <div class="carousel-item text-center" style="background-color:grey">
-      <p style="color:white"><%= review.content %></p>
+      <p style="color:white" class="pt-3"><%= review.content %></p>
     </div>
     <% end %>
   </div>
