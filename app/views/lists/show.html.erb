@@ -10,7 +10,9 @@
     <p>List </p>
   </div>
 </div>
-
+<div class="container">
+  <%= render "review_caroussel" %>
+</div>
 <div class="container mt-4">
 <%= link_to "Add new Movie to list", new_list_bookmark_path(params[:id]), class: "btn btn-primary" %>
 
